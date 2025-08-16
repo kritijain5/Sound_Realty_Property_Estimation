@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ![phData Logo](phData.png "phData Logo")
 
 # phData Machine Learning Engineer Candidate Project
@@ -179,3 +180,7 @@ If you have any suggestions for this project or our interview process, please
 **give us feedback.**
 Our goal is to make the interview process a positive experience for candidates
 and we are always interested in improving.
+=======
+# Sound_Realty_Property_Estimation
+This Repo will contain Property Estimate ML Project Challenge
+>>>>>>> 52121b48fdb70e36d0ea42907421a4165cbf1b0b
