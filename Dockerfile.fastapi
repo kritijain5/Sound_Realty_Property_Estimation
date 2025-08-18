@@ -1,0 +1,15 @@
+FROM python:3.10-slim
+
+# --- Accept API_VERSION as a build argument ---
+ARG API_VERSION
+# --- Set it as an environment variable in the container ---
+ENV API_VERSION=${API_VERSION}
+
+WORKDIR /app
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+COPY . .
+EXPOSE 8000
+
+CMD ["uvicorn", "house_price_predict_service:app", "--host", "0.0.0.0", "--port", "8000"]
+# --- End of Dockerfile.fastapi ---

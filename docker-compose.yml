@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  fastapi_app:
+    build:
+      context: .
+      dockerfile: Dockerfile.fastapi
+      args:
+        API_VERSION: ${API_VERSION}
+    image: your-docker-registry/your-username/fastapi-app:${API_VERSION}
+    ports:
+      - "8000:8000"
+    environment:
+      - API_VERSION=${API_VERSION} # Pass to the running container
+    deploy:
+      replicas: 2
+      update_config:
+        parallelism: 1
+        delay: 10s
+        order: start-first
+      restart_policy:
+        condition: on-failure
+
+  streamlit_app:
+    build:
+      context: .
+      dockerfile: Dockerfile.streamlit
+      args:
+        API_VERSION: ${API_VERSION}
+    image: your-docker-registry/your-username/streamlit-app:${API_VERSION}
+    ports:
+      - "8501:8501"
+    environment:
+      - API_VERSION=${API_VERSION}
+    depends_on:
+      - fastapi_app
+    deploy:
+      restart_policy:
+        condition: on-failure
