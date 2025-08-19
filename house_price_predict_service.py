@@ -13,7 +13,7 @@ from config import MODEL_PATH, FEATURES_PATH, DEMOGRAPHICS_PATH
 API_VERSION = os.getenv("API_VERSION", "unknown")
 # ----------------------------------------------------
 
-# Load model, features, and demographics data
+# Load model, features, and demographics dataaa
 try:
     with open(MODEL_PATH, "rb") as f:
         model = pickle.load(f)
@@ -27,7 +27,7 @@ try:
 except FileNotFoundError as e:
     raise FileNotFoundError(f"Required file not found: {e.filename}. Make sure your model and data files exist in the correct paths.")
 except Exception as e:
-    raise Exception(f"Error loading model or data: {e}")
+    raise Exception(f"Error loading models or data: {e}")
 
 # Initialize FastAPI app with version in the title
 app = FastAPI(title=f"Housing Price Prediction API - Version {API_VERSION}")

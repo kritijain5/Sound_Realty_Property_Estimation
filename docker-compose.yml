@@ -7,13 +7,13 @@ services:
       dockerfile: Dockerfile.fastapi
       args:
         API_VERSION: ${API_VERSION}
-    image: your-docker-registry/your-username/fastapi-app:${API_VERSION}
+    image: kritij/fastapi-app:1.2.0
     ports:
       - "8000:8000"
     environment:
       - API_VERSION=${API_VERSION} # Pass to the running container
     deploy:
-      replicas: 2
+      replicas: 1
       update_config:
         parallelism: 1
         delay: 10s
@@ -27,7 +27,7 @@ services:
       dockerfile: Dockerfile.streamlit
       args:
         API_VERSION: ${API_VERSION}
-    image: your-docker-registry/your-username/streamlit-app:${API_VERSION}
+    image: kritij/streamlit-app:1.2.0
     ports:
       - "8501:8501"
     environment:

@@ -4,7 +4,7 @@ import json
 
 # Define the URL of your FastAPI endpoint
 # Make sure this matches the address where your FastAPI app is running
-FASTAPI_URL = "http://127.0.0.1:8000/predict"
+FASTAPI_URL = "http://fastapi_app:8000"
 
 st.set_page_config(
     page_title="Sound Realty Home Value Estimator",
@@ -13,7 +13,8 @@ st.set_page_config(
 )
 
 st.title("🏠 Sound Realty Home Value Estimator")
-st.write("Enter the details of the property to get an estimated selling price.")
+st.write("Enter the details of the property to get an estimat" \
+"ed selling price.")
 
 # Use a Streamlit form to collect all user inputs
 with st.form("house_prediction_form"):
