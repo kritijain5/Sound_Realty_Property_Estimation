@@ -1,2 +1,39 @@
-model/*
+# MLflow tracking directory
+mlruns/
+
+# Python compiled files
+__pycache__/
 *.pyc
+*.pyo
+.Python/
+
+# Virtual environment
+venv/
+.venv/
+env/
+.env/
+
+# Data files (if not intended for version control)
+data/
+# Or specifically exclude only log/db files if you want to keep source CSVs
+# data/*.log
+# data/*.json
+# data/*.db
+
+# Saved models (if not stored by MLflow or other dedicated system)
+*.pkl
+*.h5
+*.pth
+*.pt
+*.onnx
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# IDE files (e.g., VS Code, PyCharm)
+.vscode/
+.idea/
+
+# Operating System generated files
+.DS_Store # macOS
+Thumbs.db # Windows

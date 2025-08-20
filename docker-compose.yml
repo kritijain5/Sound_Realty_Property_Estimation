@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile.fastapi
       args:
         API_VERSION: ${API_VERSION}
-    image: kritij/fastapi-app:1.2.0
+    image: kritij/fastapi-app:1.5.0
     ports:
       - "8000:8000"
     environment:
@@ -27,7 +27,7 @@ services:
       dockerfile: Dockerfile.streamlit
       args:
         API_VERSION: ${API_VERSION}
-    image: kritij/streamlit-app:1.2.0
+    image: kritij/streamlit-app:1.5.0
     ports:
       - "8501:8501"
     environment:

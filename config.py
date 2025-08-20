@@ -12,6 +12,6 @@ MODEL_PATH = MODEL_DIR / "model.pkl"
 FEATURES_PATH = MODEL_DIR / "model_features.json"
 OUTPUT_PATH = PREDICTION_DIR / "predictions.csv"
 
-# --- Add this line for versioning ---
-API_VERSION = "1.1.0"
-# -------------------------------------
+# Define the path for the prediction log file
+PREDICTION_LOG_PATH = DATA_DIR / "predictions.log" # <--- This line was added
+
